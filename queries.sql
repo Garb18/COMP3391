@@ -39,4 +39,25 @@ SELECT Location,
 FROM accommodation --Question 13
 select (datediff(datearrive, dateleave)) as travelTime
 from travel
-where destination = "Kleeve" -- Question 13
+where destination = "Kleeve" --Question 14
+select FirstName,
+    LastName,
+    Mobile,
+    Postcode
+from staff
+where Postcode like 'b%' --Question 15
+select service,
+    sum(quote)
+from ctransaction
+group by service
+order by sum(quote) DESC --Question 16
+select *
+from client
+where CompOrg is not NUll --Question 17
+select Product,
+    (price_per_unit * qty) as totalValue
+from suppliesatdepot
+group by product
+order by totalValue DESC --Question 18
+select sum(price_per_unit * qty) as totalValue
+from suppliesatdepot
